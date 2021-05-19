@@ -10,8 +10,12 @@ but you 100 more play one video, many people's are think, you are crazy.
 
 # How to setup?
 i try build this player, i see very many errors, i don't know. build is why have very many errors?
-if you want use this player, download with zip and unzip, you can play with command prompt for enter "npx electron app"
+if you want use this player, download with zip and unzip, if you want clear my play count, edit play_count.txt.
+if you want test unzip ram.zip to get my music mp4. unzip need ram.z01, ram.z02. if you can't unzip ram.zip, install bandizip and unzip
+you can play with command prompt for enter "npx electron app"
+you don't have modules, you can install modules with "npm install custom-electron-titlebar", "npm install node-notifier", "npm install discord-rpc", "npm install electron" in command prompt
 
 # Why only play one video?
 i before make this video player, thinked. i want see my music play count. so i try see play count with other music players. but i can't seem play count
 so i make this for my custom music player
+but i'm tired for make can play other videos
