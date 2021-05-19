@@ -1,5 +1,6 @@
 # RamPlayer
-made by ラム＃０２０２(
+made by ラム＃０２０２(discord tag)
+
 ![image](https://user-images.githubusercontent.com/79322339/118792746-e9cb7480-b8d2-11eb-8c09-2ac6812d6de8.png)
 ![image](https://user-images.githubusercontent.com/79322339/118793174-5181bf80-b8d3-11eb-8a85-aacec36910aa.png)
 ![image](https://user-images.githubusercontent.com/79322339/118793441-9279d400-b8d3-11eb-9f7b-2f90383379a6.png)
