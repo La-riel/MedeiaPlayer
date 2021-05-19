@@ -4,8 +4,11 @@
 ![image](https://user-images.githubusercontent.com/79322339/118793441-9279d400-b8d3-11eb-9f7b-2f90383379a6.png)
 
 RamPlayer is video player, but only play one video.
+
 this player can save play count.
+
 you can boast play count with discord rpc.
+
 but you 100 more play one video, many people's are think, you are crazy.
 
 # How to setup?
