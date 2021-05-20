@@ -14,6 +14,7 @@ this player can save play count.
 you can boast play count with discord rpc.
 
 but you 100 more play one video, many people's are think, you are crazy.
+* But I played 280 times in two days.
 
 # How to setup?
 i try build this player, i see very many errors, i don't know. build is why have very many errors?
