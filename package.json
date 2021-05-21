@@ -1,0 +1,40 @@
+{
+  "name": "mp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.7",
+    "discord-rpc": "^3.2.0",
+    "node-notifier": "^9.0.1"
+  },
+  "devDependencies": {
+    "electron": "^12.0.8",
+    "electron-builder": "^22.10.5"
+  },
+  "build": {
+    "asar": true,
+    "appId": "ram.player",
+    "productName": "Ram Player",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./ram.png"
+    }
+  },
+  "nsis": {
+    "oneClick": false,
+    "installerIcon": "ram.ico",
+    "installerLanguages": [
+      "en_US",
+      "ko_KR"
+    ],
+    "language": "1042"
+  }
+}
