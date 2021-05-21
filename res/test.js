@@ -133,9 +133,12 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 	});
 	titlebar.setHorizontalAlignment('left');
 	mp.volume = 0.2
+	console.log(songs[dataa].key)
 	fs.readFile("res/play_count_" + songs[dataa].key + ".txt", {"encoding": "UTF8"}, (err, data)=>{
 		var play_count = eval(data)
-		if (play_count == null) play_count = 0
+		if (play_count == null) {
+			play_count = 0
+		}
 		var p_c = document.getElementById("play_count")
 		p_c.innerText = "총 재생횟수 : " + play_count
 	})
@@ -161,9 +164,11 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 	mp.addEventListener('ended', (event) => {
 		fs.readFile("res/play_count_" + songs[dataa].key + ".txt", {"encoding": "UTF8"}, (err, data)=>{
 			var play_count = eval(data)
-			if (play_count == null) play_count = 0
+			if (play_count == null) {
+				play_count = 0
+			}
 			play_count++
-			fs.writeFile("res/play_count-" + songs[dataa].key + ".txt", play_count.toString(), ()=>{
+			fs.writeFile("res/play_count_" + songs[dataa].key + ".txt", play_count.toString(), ()=>{
 				var p_c = document.getElementById("play_count")
 				p_c.innerText = "총 재생횟수 : " + play_count
 			})
