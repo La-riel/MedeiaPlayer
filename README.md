@@ -18,4 +18,6 @@ download with zip and unzip
 
 you don't have modules, you can install modules with "npm install custom-electron-titlebar", "npm install node-notifier", "npm install discord-rpc", "npm install electron" in command prompt
 
+you need edit file start.bat(optional), res/test.js(compulsory)
+
 you can play with command prompt for enter "npx electron test"
