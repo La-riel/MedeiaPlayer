@@ -20,4 +20,4 @@ you don't have modules, you can install modules with "npm install custom-electro
 
 you need edit file start.bat(optional), res/test.js(compulsory)
 
-you can play with command prompt for enter "npx electron test"
+open start.bat
