@@ -18,7 +18,7 @@ download with zip and unzip
 
 you don't have modules, you can install modules with "npm install custom-electron-titlebar", "npm install node-notifier", "npm install discord-rpc", "npm install electron" in command prompt
 
-put video file in res folder
+put video file(mp4) in res folder
 
 you need edit file start.bat(optional), res/test.js(compulsory)
 
