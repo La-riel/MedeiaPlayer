@@ -1,18 +1,6 @@
 const fs = require('fs');
 const songs = {
-	"1": {"color": "#e5576e", "name": "당신이 모르는 것", "author": "무라카와 리에", "url": "https://www.youtube.com/watch?v=zsxjsGV5wRM", "key": "ram"},
-	"2": {"color": "#39ca25", "name": "천성의 약함", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=_rEUy4Vbe7k", "key": "tensei"},
-	"3": {"color": "#d6b064", "name": "Believe in you", "author": "nonoc", "url": "https://www.youtube.com/watch?v=F9zvB35Is6o", "key": "believe"},
-	"4": {"color": "#ffffff", "name": "생명에게 미움받고 있어", "author": "마후마후", "url": "https://www.youtube.com/watch?v=eq8r1ZTma08", "key": "inochi"},
-	"5": {"color": "#ffc0cb", "name": "여자아이가 되고 싶어", "author": "마후마후", "url": "https://www.youtube.com/watch?v=ucbx9we6EHk", "key": "onna"},
-	"6": {"color": "#ffffff", "name": "말 없는 흑백합", "author": "마후마후", "url": "https://www.youtube.com/watch?v=9dqLAKvWrCg", "key": "mal"},
-	"7": {"color": "#0000FF", "name": "ADAMAS", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=aZQf96ZpuSY", "key": "adamas"},
-	"8": {"color": "#39c5bb", "name": "거센 외로움이 덮쳐와", "author": "마후마후", "url": "https://www.youtube.com/watch?v=KhV57_EH3AA", "key": "moudoku"},
-	"9": {"color": "#c0c0c0", "name": "윤회전생", "author": "마후마후", "url": "https://www.youtube.com/watch?v=vU3oF90WKpw", "key": "rinne"},
-	"10": {"color": "#000000", "name": "닌자의 권유", "author": "마후마후", "url": "https://www.youtube.com/watch?v=tASF0Vj_-QE", "key": "ninja", "font": "white"},
-	"11" : {"color": "#000000", "name": "새크리파이스", "author": "마후마후", "url": "https://www.youtube.com/watch?v=boLiYzE3xM8", "key": "sacri", "font": "white"},
-	"12": {"color": "#000000", "name": "테오", "author": "ARAKI", "url": "https://www.youtube.com/watch?v=ici8UJP5bCg", "key": "teo", "font": "white"},
-	"13": {"color": "#000000", "name": "히바나", "author": "마후마후, 소라후", "url": "https://www.youtube.com/watch?v=UVHZm80y7Fo", "key": "hibana", "font": "white"}
+	"1": {"color": "hex color (ex: #000000)", "name": "song name", "author": "singer", "url": "video url", "key": ".mp4 file name without .mp4"},
 }
 fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 	var css  = `
