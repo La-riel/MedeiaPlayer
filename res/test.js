@@ -16,7 +16,7 @@ const songs = {
 	"10": {"color": "#000000", "name": "닌자의 권유", "author": "마후마후", "url": "https://www.youtube.com/watch?v=tASF0Vj_-QE", "key": "ninja", "font": "white"},
 	"11" : {"color": "#000000", "name": "새크리파이스", "author": "마후마후", "url": "https://www.youtube.com/watch?v=boLiYzE3xM8", "key": "sacri", "font": "white"},
 	"12": {"color": "#000000", "name": "테오", "author": "ARAKI", "url": "https://www.youtube.com/watch?v=ici8UJP5bCg", "key": "teo", "font": "white"},
-	"13": {"color": "#000000", "name": "히바나", "author": "마후마후, 소라후", "url": "https://www.youtube.com/watch?v=UVHZm80y7Fo", "key": "hibana", "font": "white"},
+	"13": {"color": "#000000", "name": "히바나", "author": "마후마후, 소라루", "url": "https://www.youtube.com/watch?v=UVHZm80y7Fo", "key": "hibana", "font": "white"},
 	"14": {"color": "#000000", "name": "쏘아올린 불꽃", "author": "마후마후", "url": "https://www.youtube.com/watch?v=t-wPaLrL2yA", "key": "tasang", "font": "white"},
 	"15": {"color": "#000000", "name": "친애하는 도플갱어에게", "author": "마후마후", "url": "https://www.youtube.com/watch?v=AOP0Gk0QDS0", "key": "dop", "font": "white"},
 	"16": {"color": "#000000", "name": "테러", "author": "마후마후", "url": "https://www.youtube.com/watch?v=inbeyw5J1zk", "key": "terror", "font": "white"},
@@ -31,7 +31,16 @@ const songs = {
 	"25": {"color": "#000000", "name": "수꽃의 눈물", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=UI2Ybr9e7KY", "key": "adabana", "font": "white"},
 	"26": {"color": "#000000", "name": "진흙속에 피다", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=40dJS_LC6S8", "key": "doro", "font": "white"},
 	"27": {"color": "#000000", "name": "잊지못할 언어", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=m68uKYAuhrI", "key": "wasure", "font": "white"},
-	"28": {"color": "#000000", "name": "COSMOS", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=QVVv4aICofc", "key": "cosmos", "font": "white"}
+	"28": {"color": "#000000", "name": "COSMOS", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=QVVv4aICofc", "key": "cosmos", "font": "white"},
+	"29": {"color": "#000000", "name": "태어난 의미따위 없었다", "author": "마후마후", "url": "https://www.youtube.com/watch?v=SHSWHJBuFzM", "key": "umare", "font": "white"},
+	"30": {"color": "#000000", "name": "그것이 당신의 행복이라 할지라도", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=VfJx7EFWi9s", "key": "sorega", "font": "white"},
+	"31": {"color": "#000000", "name": "Ghsot Rule", "author": "마후마후", "url": "https://www.youtube.com/watch?v=28M-EFT_O64", "key": "ghostrule", "font": "white"},
+	"32": {"color": "#000000", "name": "사랑이 시작되는 방정식", "author": "마후마후, 소라루", "url": "https://www.youtube.com/watch?v=n1yFpudUS3c", "key": "aigahajimaru", "font": "white"},
+	"33": {"color": "#000000", "name": "소녀해부", "author": "마후마후", "url": "https://www.youtube.com/watch?v=EliO8DazIg0", "key": "otome", "font": "white"},
+	"34": {"color": "#000000", "name": "자상무색", "author": "마후마후", "url": "https://www.youtube.com/watch?v=Ho8ZgrX81ek", "key": "jishou", "font": "white"},
+	"35": {"color": "#000000", "name": "Grand Escape", "author": "마후마후", "url": "https://www.youtube.com/watch?v=QK8BUygFR1U", "key": "grandescape", "font": "white"},
+	"36": {"color": "#000000", "name": "전전전생", "author": "소라루, 마후마후", "url": "https://www.youtube.com/watch?v=243iMt5Ff34", "key": "zen", "font": "white"},
+	"37": {"color": "#000000", "name": "그 목소리가 사라지지 않아", "author": "Fumika, Sunya", "url": "https://www.youtube.com/watch?v=rTD0GXm2y-Y", "key": "sonokoe", "font": "white"}
 }
 fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 	var css  = `
@@ -164,9 +173,9 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 			mp.volume = val / 1000;
 			document.getElementById("voltext").innerText = Math.floor(val / 10) + " / 100"
 		}
-		document.getElementById("vol-control").value = "500"
+		document.getElementById("vol-control").value = "200"
     	mp.volume = document.getElementById("vol-control").value / 1000;
-		document.getElementById("voltext").innerText = Math.floor(500 / 10) + " / 100"
+		document.getElementById("voltext").innerText = Math.floor(200 / 10) + " / 100"
 		p_c.innerHTML += "<text id='pcc'>총 재생횟수 : " + play_count + "</text>"
 		p_c.innerHTML += `<input id="current-time" type="range" min="0" max="100" step="1"></input><text id="timetext">시간</text>`
 		document.getElementById('current-time').value = 0
