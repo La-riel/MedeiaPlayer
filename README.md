@@ -1,5 +1,5 @@
 # RamPlayer
-originally name is mp("m"usic "p"layer).
+originally name is mp(`m`usic `p`layer).
 but i change project name to RamPlayer for Share source code
 made by ラム#0202 (my discord tag)
 
@@ -16,10 +16,10 @@ you can boast play count with discord rpc.
 # How to setup?
 download with zip and unzip
 
-you don't have modules, you can install modules with "npm install custom-electron-titlebar", "npm install node-notifier", "npm install discord-rpc", "npm install electron" in command prompt
+you don't have modules, you can install modules with `npm install custom-electron-titlebar`, `npm install node-notifier`, `npm install discord-rpc`, `npm install electron` in command prompt
 
-put video file(mp4) in res folder
+put video file(mp4) in res folder. if you need video you can download youtube video with youtube-dl.exe for cli, `youtube-dl.exe (youtube url)`
 
-you need edit file start.bat(optional), res/test.js(compulsory)
+you need edit file start.bat`optional`, res/test.js`compulsory`
 
 open start.bat
