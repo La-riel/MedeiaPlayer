@@ -16,7 +16,7 @@ you can boast play count with discord rpc.
 # How to setup?
 download with zip and unzip
 
-you don't have modules, you can install modules with `npm install custom-electron-titlebar`, `npm install node-notifier`, `npm install discord-rpc`, `npm install electron` in command prompt
+you don't have modules, you can install modules with `npm install custom-electron-titlebar`, `npm install node-notifier`, `npm install discord-rpc`, `npm install electron`, `npm install youtube-thumbnail`, `npm install discord-webhook-node` in command prompt
 
 put video file(mp4) in res folder. if you need video you can download youtube video with youtube-dl.exe for cli, `youtube-dl.exe (youtube url)`
 
