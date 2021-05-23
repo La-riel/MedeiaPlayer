@@ -44,7 +44,7 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 
 		#play_count {
 			font-family: 'Bazzi';
-			font-size: 50px;
+			font-size: 45px;
 			text-align: center;
 		}
 
@@ -92,7 +92,7 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 
 		#play_count {
 			font-family: 'Bazzi';
-			font-size: 50px;
+			font-size: 45px;
 			color: ${songs[dataa].font};
 			text-align: center;
 		}
@@ -133,10 +133,6 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 	}
 	console.log(dataa + " 헉 " + JSON.stringify(songs[dataa]))
 	const body = document.body;
-	window.SetVolume = function SetVolume(val)
-    {
-        mp.volume = val / 1000;
-    }
 	body.innerHTML = `<video autoplay src="${songs[dataa].key}.mp4" id="mp" width="800"></video><div id="play_count"></div>`
 	const ht = document.head;
 	ht.innerHTML += `<style>${css}</style>`
@@ -162,11 +158,17 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 		else {
 			play_count = 0
 		}
-		p_c.innerHTML += `<input id="vol-control" type="range" min="0" max="1000" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>`
+		p_c.innerHTML += `<text id="voltext">볼륨</text><input id="vol-control" type="range" min="0" max="1000" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>`
+		window.SetVolume = function SetVolume(val)
+		{
+			mp.volume = val / 1000;
+			document.getElementById("voltext").innerText = Math.floor(val / 10) + " / 100"
+		}
 		document.getElementById("vol-control").value = "500"
     	mp.volume = document.getElementById("vol-control").value / 1000;
+		document.getElementById("voltext").innerText = Math.floor(500 / 10) + " / 100"
 		p_c.innerHTML += "<text id='pcc'>총 재생횟수 : " + play_count + "</text>"
-		p_c.innerHTML += `<input id="current-time" type="range" min="0" max="100" step="1"></input>`
+		p_c.innerHTML += `<input id="current-time" type="range" min="0" max="100" step="1"></input><text id="timetext">시간</text>`
 		document.getElementById('current-time').value = 0
 		document.getElementById('current-time').disabled = true;
 		mp.onloadedmetadata = function() {
@@ -174,7 +176,7 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 		}
 		mp.addEventListener('timeupdate', ()=>{
 			document.getElementById('current-time').value = mp.currentTime
-			console.log(mp.currentTime + " / " + document.getElementById("current-time").max)
+			document.getElementById("timetext").textContent = Math.floor(mp.currentTime) + " / " + Math.floor(document.getElementById("current-time").max)
 		})
 		client.on('ready', () => {
 			client.setActivity({
@@ -205,15 +207,18 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 			play_count++
 			fs.writeFile("res/play_count_" + songs[dataa].key + ".txt", play_count.toString(), ()=>{
 				var p_c = document.getElementById("play_count")
-				document.getElementsByTagName('text')[0].remove()
+				document.getElementById('pcc').remove()
+				document.getElementById('timetext').remove()
 				document.getElementById('current-time').remove()
 				p_c.innerHTML += "<text id='pcc'>총 재생횟수 : " + play_count + "</text>"
-				p_c.innerHTML += `<input id="current-time" type="range" min="0" max="${mp.duration * 100}" step="1"></input>`
+				p_c.innerHTML += `<input id="current-time" type="range" min="0" max="100" step="1"></input><text id="timetext">시간</text>`
 				document.getElementById('current-time').value = 0
 				document.getElementById('current-time').disabled = true;
-				mp.onloadedmetadata = function() {
-					document.getElementById("current-time").max = mp.duration
-				}
+				document.getElementById("current-time").max = mp.duration
+				mp.addEventListener('timeupdate', ()=>{
+					document.getElementById('current-time').value = mp.currentTime
+					console.log(mp.currentTime + " / " + document.getElementById("current-time").max)
+				})
 			})
 			mp.play()
 			client.setActivity({
