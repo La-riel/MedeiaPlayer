@@ -47,7 +47,8 @@ const songs = {
 	"35": {"color": "#000000", "name": "Grand Escape", "author": "마후마후", "url": "https://www.youtube.com/watch?v=QK8BUygFR1U", "key": "grandescape", "font": "white"},
 	"36": {"color": "#000000", "name": "전전전생", "author": "소라루, 마후마후", "url": "https://www.youtube.com/watch?v=243iMt5Ff34", "key": "zen", "font": "white"},
 	"37": {"color": "#000000", "name": "그 목소리가 사라지지 않아", "author": "Fumika, Sunya", "url": "https://www.youtube.com/watch?v=rTD0GXm2y-Y", "key": "sonokoe", "font": "white"},
-	"38": {"color": "#39c5bb", "name": "연애재판", "author": "히니띵", "url": "https://www.youtube.com/watch?v=s5zdukJgwTE", "key": "enhai", "font": "white"}
+	"38": {"color": "#39c5bb", "name": "연애재판", "author": "히니띵", "url": "https://www.youtube.com/watch?v=s5zdukJgwTE", "key": "enhai", "font": "white"},
+	"39": {"color": "#39c5bb", "name": "내일의 밤하늘 초계반", "author": "월피스 카터", "url": "https://www.youtube.com/watch?v=Za1wb_OADto&t=29s", "key": "nightsky", "font": "white"}
 }
 fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 	var css  = `
@@ -60,18 +61,17 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 
 		#play_count {
 			font-family: 'Bazzi';
-			font-size: 45px;
+			font-size: 40px;
 			text-align: center;
 		}
 
 		#mp {
 			top: 0px;
 			left: 0px;
-			border: 1px solid black;
+			width: 100%;
 		}
 
 		.titlebar {
-			border: 1px solid black;
 		}
 
 		.window-title {
@@ -94,7 +94,6 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 			margin: 0;
 			padding: 0;
 			background-color: ${songs[dataa].color};
-			border: 1px solid black;
 		}
 		`
 	if (songs[dataa].font != null) {
@@ -108,7 +107,7 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 
 		#play_count {
 			font-family: 'Bazzi';
-			font-size: 45px;
+			font-size: 40px;
 			color: ${songs[dataa].font};
 			text-align: center;
 		}
@@ -116,11 +115,10 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 		#mp {
 			top: 0px;
 			left: 0px;
-			border: 1px solid black;
+			width: 100%;
 		}
 
 		.titlebar {
-			border: 1px solid black;
 		}
 
 		.window-title {
@@ -143,13 +141,12 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 			margin: 0;
 			padding: 0;
 			background-color: ${songs[dataa].color};
-			border: 1px solid black;
 		}
 		`
 	}
 	console.log(dataa + " 헉 " + JSON.stringify(songs[dataa]))
 	const body = document.body;
-	body.innerHTML = `<video autoplay src="${songs[dataa].key}.mp4" id="mp" width="800"></video><div id="play_count"></div>`
+	body.innerHTML = `<video autoplay src="${songs[dataa].key}.mp4" id="mp"></video><div id="play_count"></div>`
 	const ht = document.head;
 	ht.innerHTML += `<style>${css}</style>`
 	const mp = document.getElementById("mp");
@@ -159,7 +156,6 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 
 	var titlebar = new customTitlebar.Titlebar({
 		backgroundColor: customTitlebar.Color.fromHex(songs[dataa].color),
-		maximizable: false,
 		menu: null,
 		iconsTheme: Themebar.mac
 	});
@@ -194,7 +190,7 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 			embed.setDescription("재생이 시작되었습니다.")
 			embed.setAuthor("ラム#0202", "https://avatars.githubusercontent.com/u/79322339?v=4", "https://github.com/RamWrath")
 			embed.setURL("https://github.com/RamWrath/RamPlayer")
-			embed.addField("현재 재생중인 노래", songs[dataa].author + " - " + songs[dataa].name)
+			embed.addField("현재 재생중인 노래", `[${songs[dataa].author} - ${songs[dataa].name}](${songs[dataa].url})`)
 			embed.addField("들은 횟수", play_count)
 			embed.setColor(songs[dataa].color)
 			embed.setTimestamp()
@@ -254,7 +250,7 @@ fs.readFile("song.txt", {"encoding": "UTF8"}, (err, dataa)=>{
 			embed.setDescription("재생이 시작되었습니다.")
 			embed.setAuthor("ラム#0202", "https://avatars.githubusercontent.com/u/79322339?v=4", "https://github.com/RamWrath")
 			embed.setURL("https://github.com/RamWrath/RamPlayer")
-			embed.addField("현재 재생중인 노래", songs[dataa].author + " - " + songs[dataa].name)
+			embed.addField("현재 재생중인 노래", `[${songs[dataa].author} - ${songs[dataa].name}](${songs[dataa].url})`)
 			embed.addField("들은 횟수", play_count)
 			embed.setColor(songs[dataa].color)
 			embed.setTimestamp()
