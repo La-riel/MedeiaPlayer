@@ -1,4 +1,4 @@
-# repository name is changed to medeia player. and updated. but i'm bored repository update is vero slow
+# repository name is changed to medeia player. and updated. but i'm bored repository update is very slow
 
 # RamPlayer
 originally name is mp(`m`usic `p`layer).
